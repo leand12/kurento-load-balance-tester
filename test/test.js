@@ -14,6 +14,7 @@ var webdriverio = require('webdriverio'),
             }
         },
         host: 'selenium',
+        // host: 'localhost',
         port: 4444
     }
 
@@ -22,6 +23,7 @@ webdriverio
     .remote(options)
     .init()
     .url('http://client:8443/index.html?ws_uri=ws://10.0.22.23:8888/kurento')
+    // .url('http://localhost:8443/index.html?ws_uri=ws://10.0.22.23:8888/kurento')
     .call(async function () {
         for (let i = 0; ; i++) {
             console.log(`Testing client for ${i * 10}s`);
